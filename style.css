@@ -1,0 +1,207 @@
+/* Style général */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Playfair Display', serif;
+}
+
+body {
+    background-color: #FFFFD4;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* En-tête avec image de fond */
+.header-background {
+    position: relative;
+    height: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 90%;
+    max-width: 1200px;
+    z-index: 1;
+}
+
+/* Logo */
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+}
+
+/* Navigation */
+header nav ul {
+    display: flex;
+    list-style: none;
+}
+
+header nav ul li {
+    margin-left: 20px;
+}
+
+header nav ul li a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 700;
+}
+
+header nav ul li a img {
+    width: 20px;
+    height: auto;
+    vertical-align: middle;
+}
+
+header nav ul li a:hover {
+    text-decoration: underline;
+}
+
+/* Image de fond pour l'en-tête */
+.box {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: 0;
+}
+
+.box .pexels-artempodrez {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.15;
+}
+
+/* Trait pour séparer les titres des sections */
+.section-divider {
+    width: 150px;
+    height: 2px;
+    background-color: #333;
+    margin: 20px auto;
+    border: none;
+}
+
+/* Section À propos */
+.about {
+    background-color: #FFFFFF;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.about h1 {
+    font-size: 32px;
+    margin-bottom: 20px;
+}
+
+.about-content {
+    background-color: #FFFFD4;
+    padding: 40px;
+}
+
+/* Cartes de la section À propos */
+.about-cards {
+    display: flex;
+    justify-content: space-around;
+    gap: 10px;
+    padding-top: 20px;
+}
+
+.card {
+    background-color: #FFFFD4;
+    padding: 20px;
+    width: 30%;
+    color: #333;
+    text-align: left;
+    border-radius: 8px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Cercle sans image */
+.icon-circle {
+    width: 50px; /* Taille du cercle */
+    height: 50px;
+    border-radius: 50%;
+    border: 2px solid #333; /* Couleur et épaisseur de la bordure */
+    margin: 0 auto 10px; /* Centrage du cercle */
+}
+
+/* Titres des cartes */
+.card h2 {
+    font-size: 20px;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.card p {
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+/* Section Galerie */
+.gallery {
+    padding: 40px 20px;
+    background-color: #fcfbfa;
+    text-align: center;
+}
+
+.gallery h1 {
+    font-size: 32px;
+    margin-bottom: 20px;
+}
+
+/* Style de l'image sous Galerie */
+.image {
+    width: 100%; /* Prend toute la largeur */
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.image .galerie-jane {
+    width: 100%;
+    max-width: 800px; /* Largeur maximale de l'image */
+    height: auto;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+/* Conteneur jaune pour le texte de description sous la Galerie */
+.gallery-description-container {
+    background-color: #FFFFD4; /* Fond jaune clair */
+    width: 100%;
+    padding: 30px 20px;
+    box-sizing: border-box;
+}
+
+.gallery-content {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+.gallery-description {
+    margin-bottom: 15px;
+}
+
+/* Section Les Oeuvres et Événements */
+.art-events {
+    padding: 40px 20px;
+    background-color: #FFFFD4;
+    text-align: center;
+}
+
+.art-events h1 {
+    font-size: 32px;
+    margin-bottom: 20px;
+}
+
