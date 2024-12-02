@@ -1,0 +1,719 @@
+ /* Style général */
+ * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Playfair Display', serif;
+}
+
+
+@media (max-width: 768px) {
+    /* Cible par position */
+    header nav ul li:nth-child(1), /* Cible le lien "À propos" */
+    header nav ul li:nth-child(2), /* Cible le lien "Galerie" */
+    header nav ul li:nth-child(3)  /* Cible le lien "Événement" */ {
+        display: none; /* Cache les éléments */
+    }
+
+    .nav-menu.active {
+        display: flex; /* Affiche le menu */
+        flex-direction: column; /* Colonne pour les petits écrans */
+        width: 90%;
+        max-width: 300px;
+        gap: 10px;
+    }
+
+   
+
+    .header-content {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start; /* Aligne les éléments vers la gauche */
+        width: 100%;
+        padding: 10px 15px; /* Ajustement du padding */
+    }
+
+    .nav-menu.active {
+        display: flex; /* Affiche le menu lorsque la classe active est ajoutée */
+    }
+
+    .burger-menu {
+        width: 300px; /* Taille pour le menu burger */
+        height: 70px; /* Alignement avec la taille du logo */
+        cursor: pointer;
+        position: absolute; /* Correction de `static` -> `relative` pour cohérence */
+        z-index: 10;
+        display: flex; /* Affiche le menu hamburger */
+        flex-direction: column;
+        justify-content: space-around;
+        margin-top: 20px;
+        margin-left: 20px; /* Décalage à gauche */
+        width: 30px; /* Largeur fixe ou ajustable */
+
+        
+        
+    }
+
+
+
+    /* Centrer le logo après les icônes */
+    .header-content .logo {
+        text-align: left;
+        font-size: 24px;
+        font-weight: bold;
+        color: #333;
+        flex-grow: 1; /* Fait en sorte que le logo prenne l'espace restant */
+    }
+
+    /* Masquer les éléments de navigation inutiles */
+    header nav ul li:nth-child(1),
+    header nav ul li:nth-child(2),
+    header nav ul li:nth-child(3) {
+        display: none; /* Cache les liens de navigation */
+    }
+
+    .carousel {
+        padding: 20px;
+    }
+
+    .contact-info {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .contact-info p {
+        margin-bottom: 10px;
+    }
+}
+
+
+
+
+
+.burger-menu {
+    width: 30px;
+    cursor: pointer;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 20px;
+}
+
+.burger-menu .line {
+    width: 100%;
+    height: 3px;
+    background-color: #333;
+    border-radius: 2px;
+    transition: all 0.3s ease-in-out;
+}
+
+.nav-menu {
+    width: 100%;
+    height: auto;
+    background-color: #f1f1f1;
+    padding: 20px;
+    border-radius: 8px;
+    display: none; /* Masqué par défaut */
+    flex-direction: column; /* Affichage vertical */
+    align-items: center; /* Centre les éléments */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.nav-menu.active {
+    display: flex; /* Affiche le menu lorsque actif */
+}
+
+.nav-menu ul {
+    list-style: none; /* Supprime les puces */
+    padding: 0; /* Supprime les marges internes */
+    margin: 0; /* Supprime les marges externes */
+    display: flex; /* Active flexbox */
+    flex-direction: column; /* Arrange les éléments en colonne (verticalement) */
+    gap: 10px; /* Espacement entre les éléments */
+    align-items: center; /* Centre les éléments horizontalement */
+}
+
+/* Chaque élément de la liste */
+.nav-menu li {
+    margin: 0; /* Supprime les marges */
+    width: auto; /* Ajuste la taille à l'intérieur du menu */
+}
+
+/* Liens dans le menu */
+.nav-menu li a {
+    display: block; /* Occupe toute la largeur disponible */
+    text-align: center; /* Centre le texte */
+    background-color: #D4A017; /* Couleur de fond */
+    color: #333; /* Couleur du texte */
+    text-decoration: none; /* Supprime le soulignement */
+    padding: 10px 15px; /* Espacement interne */
+    border-radius: 5px; /* Coins arrondis */
+    font-weight: bold; /* Texte en gras */
+    font-size: 16px; /* Taille du texte */
+    transition: all 0.3s ease-in-out; /* Transition douce */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Ombre légère */
+}
+
+/* Effet au survol */
+.nav-menu li a:hover {
+    background-color: #FFC857; /* Couleur au survol */
+    color: #fff; /* Texte blanc au survol */
+}
+
+
+
+body {
+    background-color: #FFFFD4;
+    color: #333;
+    line-height: 1.6;
+}
+
+
+/* Liens de navigation en mode bureau */
+.nav-links {
+    display: flex;
+    gap: 20px;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    
+}
+
+.nav-links a:hover {
+    color: #ddd;
+}
+
+/* Menu hamburger en mode mobile */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 4px;
+    cursor: pointer;
+}
+
+.hamburger span {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background-color: white;
+    border-radius: 2px;
+}
+
+
+/* En-tête avec image de fond */
+.header-background {
+    position: relative;
+    height: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: url(photo/pexels-artempodrez-7233326\(1\).png);
+    background-repeat: no-repeat;
+}
+
+.header-background {
+    width: 100%; /* S'assure que la largeur de l'en-tête est celle de la page */
+    height: 30vh; /* Prend la hauteur de la fenêtre */
+    background-image: url(photo/pexels-artempodrez-7233326\(1\).png);
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 60px 50px;
+}
+
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 90%;
+    max-width: 1200px;
+    z-index: 1;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+}
+
+header nav ul {
+    display: flex;
+    list-style: none;
+}
+
+header nav ul li {
+    margin-left: 20px;
+}
+
+header nav ul li a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 700;
+}
+
+header nav ul li a img {
+    width: 20px;
+    height: auto;
+    vertical-align: middle;
+}
+
+header nav ul li a:hover {
+    text-decoration: underline;
+}
+
+.box {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: 0;
+}
+
+.box .pexels-artempodrez {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.15;
+}
+
+/* Section dividers */
+.section-divider {
+    width: 150px;
+    height: 2px;
+    background-color: #333;
+    margin: 20px auto;
+}
+
+/* About and Gallery Section */
+.about, .gallery, .art-events {
+    background-color: #FFFFFF; /* White background for consistency */
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.about h1, .gallery h1, .art-events h1 {
+    font-size: 32px;
+    margin-bottom: 20px;
+}
+
+.about-content, .gallery-description-container, .art-events-content {
+    background-color: #FFFFD4;
+    padding: 40px;
+}
+
+/* About card styles */
+.about-cards {
+    display: flex;
+    justify-content: space-around;
+    gap: 10px;
+    padding-top: 20px;
+}
+
+.card {
+    background-color: #FFFFD4;
+    padding: 20px;
+    width: 30%;
+    color: #333;
+    text-align: left;
+    border-radius: 8px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.icon-circle {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 2px solid #333;
+    margin: 0 auto 10px;
+}
+
+/* Gallery section */
+.gallery {
+    padding: 40px 20px;
+    background-color: #fcfbfa;
+    text-align: center;
+}
+
+.image {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.image .galerie-jane {
+    width: 100%;
+    max-width: 800px;
+    height: auto;
+    border-radius: 8px;
+}
+
+.gallery-description-container {
+    background-color: #FFFFD4;
+    width: 100%;
+    padding: 30px 20px;
+}
+
+.gallery-content {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+/* Art Events Section */
+.art-events {
+    padding: 40px 20px;
+    background-color: #FFFFFF;
+    text-align: center;
+}
+
+.art-events h1 {
+    font-size: 32px;
+    margin-bottom: 20px;
+}
+
+/* Carousel under "LES OEUVRES ET EVENEMENTS" */
+.carousel {
+    background-color: #FFFFD4; /* Light background for the carousel section */
+    padding: 150px;
+    border-radius: 8px;
+    max-width: 1000px;
+    margin: 20px auto;
+    text-align: center;
+}
+
+.carousel-images {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+}
+
+.carousel-image {
+    display: none;
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+.carousel-image.active {
+    display: block;
+}
+
+.carousel-indicators {
+    text-align: center;
+    margin-top: 10px;
+}
+
+.indicator {
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    margin: 0 4px;
+    background-color: #bbb;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.indicator.active {
+    background-color: #2BC74;
+}
+
+/* Newsletter */
+.newsletter {
+    margin: 40px 0;
+    padding: 30px;
+    text-align: center;
+    border-top: 0px solid #333; /* Divider line above the title */
+}
+
+.newsletter h2 {
+    font-size: 28px;
+    margin: 20px auto 15px;
+}
+
+.newsletter-button {
+    display: inline-block;
+    padding: 15px 30px;
+    background-color: #FFFFD4;
+    color: #333;
+    border: 1px solid #333;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+    margin: 20px auto;
+    display: block;
+}
+
+.newsletter-button:hover {
+    background-color: #2BC74;
+    color: #fff;
+}
+
+/* Newsletter form overlay */
+.newsletter-form-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+}
+
+.newsletter-form-content {
+    background-color: #FFFFD4;
+    padding: 20px;
+    border-radius: 8px;
+    width: 300px;
+    text-align: center;
+    position: relative;
+}
+
+.newsletter-form-content h3 {
+    margin-bottom: 20px;
+}
+
+.newsletter-form-content input[type="email"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #333;
+    border-radius: 4px;
+}
+
+.newsletter-form-content button {
+    padding: 10px 20px;
+    background-color: #D4A017;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.newsletter-form-content button:hover {
+    background-color: #333;
+}
+
+.close-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+/* Contact information */
+.contact-info {
+    background-color: #D4A017;
+    color: #fff;
+    padding: 60px;
+    font-size: 14px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.contact-details {
+    text-align: left;
+}
+
+.social-icons-container {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.social-icons {
+    display: flex;
+    gap: 15px;
+}
+
+.icon-circle {
+    color: white;
+    font-size: 18px;
+    background-color: #333;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+}
+
+.icon-circle:hover {
+    background-color: #555;
+}
+
+
+/* Style pour le titre de la newsletter avec une image en arrière-plan */
+.newsletter-form-content h3 {
+    background-image: url('photo/pexels-artempodrez-7233326\(1\).png'); /* Remplacez par le chemin de votre image */
+    background-size: cover; /* Adapte l'image à la taille du conteneur */
+    background-position: center; /* Centre l'image */
+    color: #333; /* Couleur du texte */
+    padding: 15px 20px; /* Espacement interne */
+    font-size: 18px; /* Taille de la police */
+    font-weight: bold; /* Met le texte en gras */
+    text-align: center; /* Centre le texte */
+    border-radius: 8px; /* Coins arrondis */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Ajoute une ombre légère */
+    display: inline-block; /* Adapte l'arrière-plan à la taille du texte */
+    width: fit-content; /* Adapte la largeur à celle du texte */
+}
+
+
+
+/* Style du menu hamburger */
+.burger-menu {
+    width: 30px;
+    cursor: pointer;
+    position: static;
+    top: 20px;
+    right: 20px;
+    z-index: 3;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 20px;
+}
+
+.burger-menu .line {
+    width: 100%;
+    height: 3px;
+    background-color: #333;
+    border-radius: 2px;
+    transition: all 0.3s ease-in-out;
+}
+
+
+.nav-menu.active {
+    display: flex;
+}
+
+
+
+
+
+
+/* Conteneur pour le menu */
+.nav-menu {
+   
+    background-size: cover; /* Adapte l'image à la taille du conteneur */
+    background-position: center; /* Centre l'image */
+    padding: 20px; /* Espacement interne */
+    border-radius: 8px; /* Coins arrondis */
+    width: 100%; /* Largeur de base adaptative */
+    max-width: 150px; /* Largeur maximale du menu */
+    min-width: 90px; /* Largeur minimale du menu */
+    margin: 20px auto; /* Centre horizontalement sur la page */
+    text-align: center; /* Centre le contenu interne */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Ombre légère */
+    height: auto; /* Hauteur automatique selon le contenu */
+    min-height: 100px; /* Hauteur minimale */
+    max-height: 200px; /* Hauteur maximale */
+}
+
+/* Style pour le titre "Liens rapides" */
+.nav-menu h3 {
+    background-image: url('photo/pexels-artempodrez-7233326(1).png'); /* Image d'arrière-plan */
+    background-color: rgba(255, 255, 255, 0.8); /* Fond semi-transparent pour contraste */
+    font-size: 20px; /* Taille du texte */
+    color: #333; /* Couleur du texte */
+    font-weight: bold; /* Texte en gras */
+    padding: 10px; /* Espacement interne */
+    border-radius: 5px; /* Coins arrondis */
+    margin-bottom: 15px; /* Espacement avec les liens */
+    display: inline-block; /* Ajuste le fond au texte */
+    text-align: center; /* Centre le titre */
+}
+
+/* Liste des liens */
+.nav-menu ul {
+    list-style: none; /* Supprime les puces de la liste */
+    padding: 0; /* Aucun espacement interne */
+    margin: 0; /* Aucun espacement externe */
+}
+
+/* Chaque élément de la liste */
+.nav-menu ul li {
+    margin-bottom: 10px; /* Espacement entre les boutons */
+}
+
+/* Style pour chaque lien */
+.nav-menu ul li a {
+    display: block; /* Lien en bloc pour occuper toute la largeur */
+    text-align: center; /* Centre le texte */
+    background-color: #D4A017; /* Couleur de fond du bouton */
+    color: #333; /* Couleur du texte */
+    text-decoration: none; /* Supprime le soulignement */
+    padding: 10px; /* Espacement interne */
+    border-radius: 5px; /* Coins arrondis */
+    font-weight: bold; /* Texte en gras */
+    font-size: 16px; /* Taille du texte */
+    transition: all 0.3s ease-in-out; /* Transition douce au survol */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Ombre légère */
+}
+
+/* Effet au survol */
+.nav-menu ul li a:hover {
+    background-color: #FFC857; /* Couleur au survol */
+    color: #fff; /* Texte blanc au survol */
+}
+
+/* Responsiveness : petits écrans */
+@media (max-width: 768px) {
+    .nav-menu {
+        width: 90%; /* Largeur adaptée pour petits écrans */
+        min-height: 200px; /* Hauteur minimale réduite */
+        max-height: 300px; /* Hauteur maximale ajustée */
+    }
+
+    .nav-menu h3 {
+        font-size: 18px; /* Réduction de la taille du texte pour petits écrans */
+        padding: 8px; /* Espacement ajusté */
+    }
+
+    .nav-menu ul li a {
+        font-size: 14px; /* Taille des liens réduite */
+        padding: 8px; /* Espacement interne ajusté */
+    }
+    .nav-menu.active {
+        display: flex; /* Affiche le menu lorsque la classe active est ajoutée */
+    }
+}
+
+/* Responsiveness : grands écrans */
+@media (min-width: 1024px) {
+    .nav-menu {
+        width: 80%; /* Largeur plus grande pour écrans larges */
+        max-width: 200px; /* Largeur maximale augmentée */
+        min-height: 200px; /* Hauteur minimale plus grande */
+        max-height: 260px; /* Hauteur maximale plus grande */
+    }
+}
+
+/* Transformation avec rotation */
+.element {
+    transform: rotate(45deg); /* Standard */
+    -webkit-transform: rotate(45deg); /* Ancien WebKit */
+    -moz-transform: rotate(45deg); /* Ancien Mozilla */
+  }
+  
